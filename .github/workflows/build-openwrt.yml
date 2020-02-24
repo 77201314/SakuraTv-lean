@@ -64,12 +64,6 @@ jobs:
     - name: Clone source code
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
 
-    - name: Replace feeds
-      run: |
-         cd openwrt
-         rm -rf feeds.conf.default
-         cp ../feeds.conf.default feeds.conf.default
-
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
 
