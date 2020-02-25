@@ -66,7 +66,7 @@ jobs:
     
     - name: 下载主题和软件包
       run: |     
-        cd package
+        cd openwrt/package
         mkdir opx
         git clone https://github.com/jerrykuku/luci-theme-argon.git
         git clone https://github.com/openwrt-develop/luci-theme-atmaterial
