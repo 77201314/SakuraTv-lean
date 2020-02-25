@@ -63,6 +63,16 @@ jobs:
 
     - name: 克隆源代码
       run: git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
+    
+    - name: 下载主题和软件包
+      run: |     
+        cd package
+        mkdir opx
+        git clone https://github.com/jerrykuku/luci-theme-argon.git
+        git clone https://github.com/openwrt-develop/luci-theme-atmaterial
+        git clone https://github.com/rosywrt/luci-theme-rosy
+        git clone https://github.com/jerrykuku/lua-maxminddb
+        git clone https://github.com/jerrykuku/luci-app-vssr
 
     - name: 更新源
       run: cd openwrt && ./scripts/feeds update -a
