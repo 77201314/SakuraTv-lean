@@ -1,5 +1,3 @@
-sed -i 's/openwrt.proxy.ustclug.org/op.hyird.xyz/g' package/lean/default-settings/files/zzz-default-settings
-version=$(cat ../version)
 sed -i '33 d' package/lean/default-settings/files/zzz-default-settings
 sed -i '33 d' package/lean/default-settings/files/zzz-default-settings
 sed -i '44 d' package/lean/default-settings/files/zzz-default-settings
@@ -12,15 +10,13 @@ echo "rm -rf /tmp/luci-modulecache/" >>package/lean/default-settings/files/zzz-d
 echo "rm -f /tmp/luci-indexcache" >>package/lean/default-settings/files/zzz-default-settings
 echo "exit 0" >>package/lean/default-settings/files/zzz-default-settings
 sed -i 's/OpenWrt/SakuraTv/g' package/base-files/files/bin/config_generate
-sed -i 's/192.168.1.1/192.168.1.16/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.1.18/g' package/base-files/files/bin/config_generate
 sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
 rm -rf package/base-files/files/etc/banner
 cp -f ../banner package/base-files/files/etc/
 
 #add sonme additional packages
 git clone https://github.com/rufengsuixing/luci-app-adguardhome         package/adg
-git clone https://github.com/destan19/OpenAppFilter                     package/oaf
-git clone https://github.com/Advanced-noob/luci-theme-atmaterial.git    package/atmaterial
 git clone https://github.com/vernesong/OpenClash                        package/clash
 
 cat << EOF >> target/linux/ipq40xx/config-4.14
