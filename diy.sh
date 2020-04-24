@@ -14,6 +14,13 @@ rm -rf package/base-files/files/etc/banner
 cp -f ../banner package/base-files/files/etc/
 cd package
 git clone https://github.com/77201314/package.git
+rm -rf package/lean/kcptun
+rm -rf package/lean/trojan
+rm -rf package/lean/v2ray
+rm -rf package/lean/luci-app-kodexplorer
+rm -rf package/lean/luci-app-pppoe-relay
+rm -rf package/lean/luci-app-pptp-server
+rm -rf package/lean/luci-app-v2ray-server
 mkdir sakura
 git clone https://github.com/destan19/OpenAppFilter && mv -f OpenAppFilter/* ./
 git clone https://github.com/tty228/luci-app-serverchan
