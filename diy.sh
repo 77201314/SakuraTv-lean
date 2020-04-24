@@ -12,16 +12,15 @@ sed -i 's/192.168.1.1/192.168.1.11/g' package/base-files/files/bin/config_genera
 sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
 rm -rf package/base-files/files/etc/banner
 cp -f ../banner package/base-files/files/etc/
+#下载passwall
 cd package
 git clone https://github.com/77201314/package.git
-rm -rf package/lean/kcptun
-rm -rf package/lean/trojan
-rm -rf package/lean/v2ray
-rm -rf package/lean/luci-app-kodexplorer
-rm -rf package/lean/luci-app-pppoe-relay
-rm -rf package/lean/luci-app-pptp-server
-rm -rf package/lean/luci-app-v2ray-server
+#删除argon
+rm -rf package/lean/luci-theme-argon
+#下载其他软件包
 mkdir sakura
+cd sakura
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
 git clone https://github.com/destan19/OpenAppFilter && mv -f OpenAppFilter/* ./
 git clone https://github.com/tty228/luci-app-serverchan
 git clone https://github.com/garypang13/luci-app-eqos
