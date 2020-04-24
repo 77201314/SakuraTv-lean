@@ -13,6 +13,7 @@ sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/theme
 rm -rf package/base-files/files/etc/banner
 cp -f ../banner package/base-files/files/etc/
 cd package
+git clone https://github.com/77201314/package.git
 mkdir sakura
 git clone https://github.com/destan19/OpenAppFilter && mv -f OpenAppFilter/* ./
 git clone https://github.com/tty228/luci-app-serverchan
@@ -22,5 +23,3 @@ git clone https://github.com/bin20088/luci-app-koolddns.git
 #赋予koolddns权限
 chmod 0755 luci-app-koolddns/root/etc/init.d/koolddns
 chmod 0755 luci-app-koolddns/root/usr/share/koolddns/aliddns
-cd package
-git clone https://github.com/77201314/package.git
